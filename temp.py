@@ -50,7 +50,7 @@ def main():
     result=""
     if st.button("PREDICT HEART DISEASE"):
         result=predict(age,trestbps,chol,fbs,restecg,thalach,oldpeak,ca,sex_Male,cp_atypical_angina,cp_non_anginal_pain,cp_typical_angina,exang_exercise_induced_angina,slope_upsloping,thal_normal,thal_reversable_defect)
-    st.success('HEART DISEASE -- {}'.format(result))
+    st.info('HEART DISEASE -- {}'.format(result))
  
     
 
