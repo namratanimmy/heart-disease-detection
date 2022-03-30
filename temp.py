@@ -16,7 +16,7 @@ def welcome():
     return "Welcome All"
 
 
-def predict_stock(age,trestbps,chol,fbs,restecg,thalach,oldpeak,ca,sex_Male,cp_atypical_angina,cp_non_anginal_pain,cp_typical_angina,exang_exercise_induced_angina,slope_upsloping,thal_normal,thal_reversable_defect):
+def predict(age,trestbps,chol,fbs,restecg,thalach,oldpeak,ca,sex_Male,cp_atypical_angina,cp_non_anginal_pain,cp_typical_angina,exang_exercise_induced_angina,slope_upsloping,thal_normal,thal_reversable_defect):
     prediction=model.predict([[age,trestbps,chol,fbs,restecg,thalach,oldpeak,ca,sex_Male,cp_atypical_angina,cp_non_anginal_pain,cp_typical_angina,exang_exercise_induced_angina,slope_upsloping,thal_normal,thal_reversable_defect]])
     print(prediction)
     return prediction
@@ -49,11 +49,8 @@ def main():
     thal_reversable_defect=st.text_input("blood flow is observed but not normal?")
     result=""
     if st.button("PREDICT HEART DISEASE"):
-        result=predict_stock(age,trestbps,chol,fbs,restecg,thalach,oldpeak,ca,sex_Male,cp_atypical_angina,cp_non_anginal_pain,cp_typical_angina,exang_exercise_induced_angina,slope_upsloping,thal_normal,thal_reversable_defect)
-    if result==0:
-        st.success('You are not prone to Heart Disease!')
-    else:
-        st.success('Please be careful, you are prone to heart disease')
+        result=predict(age,trestbps,chol,fbs,restecg,thalach,oldpeak,ca,sex_Male,cp_atypical_angina,cp_non_anginal_pain,cp_typical_angina,exang_exercise_induced_angina,slope_upsloping,thal_normal,thal_reversable_defect)
+    st.success('HEART DISEASE -- {}'.format(result))
  
     
 
@@ -61,8 +58,5 @@ def main():
     
 if __name__=='__main__':
     main()
-
-
-
 
 
