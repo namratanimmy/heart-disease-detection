@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st 
 import os
 import base64
-
+from PIL import Image
 
 pickle_in=open("model.pkl","rb")
 model=pickle.load(pickle_in)
@@ -28,8 +28,11 @@ def main():
     <h2 style="color:black;text-align:left;font-size:54px">HEART DISEASE DETECTION</h2>
     </div>
     """
+
     
     st.markdown(html_temp,unsafe_allow_html=True)
+    img = Image.open("image.png")
+    st.image(img, width=600)
     st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
     age = st.text_input("age")
     trestbps = st.text_input("blood pressure(mm Hg)")
@@ -50,7 +53,7 @@ def main():
     result=""
     if st.button("PREDICT HEART DISEASE"):
         result=predict(age,trestbps,chol,fbs,restecg,thalach,oldpeak,ca,sex_Male,cp_atypical_angina,cp_non_anginal_pain,cp_typical_angina,exang_exercise_induced_angina,slope_upsloping,thal_normal,thal_reversable_defect)
-    st.info('HEART DISEASE -- {}'.format(result))
+    st.success('HEART DISEASE -- {}'.format(result))
  
     
 
