@@ -7,7 +7,7 @@ import os
 
 
 
-pickle_in=open("F:\clg\project heart\model.pkl","rb")
+pickle_in=open("model.pkl","rb")
 model=pickle.load(pickle_in)
 
 
