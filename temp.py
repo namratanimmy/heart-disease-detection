@@ -25,7 +25,7 @@ def predict(age,trestbps,chol,fbs,restecg,thalach,oldpeak,ca,sex_Male,cp_atypica
 def main():
     html_temp = """
     <div style="font-style: italic;font:Sans-serif;padding:10px">
-    <h2 style="color:black;text-align:left;font-size:54px">HEART DISEASE DETECTION</h2>
+    <h2 style="color:white;text-align:left;font-size:54px">HEART DISEASE DETECTION</h2>
     </div>
     """
 
